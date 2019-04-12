@@ -1,0 +1,38 @@
+{
+	"fileName": "id_1555056843929_263_hideControl",
+	"fileType": "change",
+	"changeType": "hideControl",
+	"moduleName": "",
+	"reference": "ZMEL_FLEX.Component",
+	"packageName": "$TMP",
+	"content": {},
+	"selector": {
+		"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_HOUSE--com.sap.vocabularies.UI.v1.LineItem::FlatCount::GroupElement",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/ZMEL_FLEX/changes/",
+	"projectId": "ZMEL_FLEX",
+	"creation": "2019-04-12T08:14:07.055Z",
+	"originalLanguage": "RU",
+	"conditions": {},
+	"context": "",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.63.1",
+		"sourceChangeFileName": "",
+		"compositeCommand": "id_1555056843930_264_composite"
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"validAppVersions": {
+		"creation": "1.0.0",
+		"from": "1.0.0",
+		"to": "1.0.0"
+	},
+	"jsOnly": false,
+	"variantReference": ""
+}

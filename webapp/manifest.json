@@ -1,0 +1,256 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "ZMEL_FLEX",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"tags": {
+			"keywords": []
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/opu/odata/sap/ZMEL_CONS_REGION_CDS/",
+				"type": "OData",
+				"settings": {
+					"annotations": [
+						"ZMEL_CONS_REGION_CDS_VAN",
+						"localAnnotations"
+					],
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZMEL_CONS_REGION_CDS_VAN": {
+				"uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZMEL_CONS_REGION_CDS_VAN',Version='0001')/$value/",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "localService/ZMEL_CONS_REGION_CDS_VAN.xml"
+				}
+			},
+			"localAnnotations": {
+				"uri": "annotations/annotations.xml",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "annotations/annotations.xml"
+				}
+			}
+		},
+		"offline": false,
+		"sourceTemplate": {
+			"id": "ui5template.smartTemplate",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"resources": {
+			"js": [],
+			"css": []
+		},
+		"dependencies": {
+			"minUI5Version": "1.32.1",
+			"libs": {
+				"sap.m": {
+					"minVersion": ""
+				},
+				"sap.ui.core": {
+					"minVersion": ""
+				},
+				"sap.ui.demokit": {
+					"minVersion": ""
+				},
+				"sap.ui.layout": {
+					"minVersion": ""
+				},
+				"sap.ui.vbm": {
+					"minVersion": ""
+				},
+				"sap.ui.vk": {
+					"minVersion": ""
+				},
+				"sap.viz": {
+					"minVersion": ""
+				}
+			},
+			"components": {}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ListReport|ZMEL_CONS_REGION": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ListReport/ZMEL_CONS_REGION/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ObjectPage|ZMEL_CONS_REGION": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ObjectPage/ZMEL_CONS_REGION/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ObjectPage|ZMEL_CONS_CITY": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ObjectPage/ZMEL_CONS_CITY/i18n.properties"
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"refreshAfterChange": false
+				}
+			},
+			"i18n|sap.suite.ui.generic.template.ObjectPage|ZMEL_CONS_DISTRICT": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ObjectPage/ZMEL_CONS_DISTRICT/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ObjectPage|ZMEL_CONS_HOUSE": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ObjectPage/ZMEL_CONS_HOUSE/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ObjectPage|ZMEL_CONS_FLAT": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ObjectPage/ZMEL_CONS_FLAT/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ObjectPage|ZMEL_CONS_OWNER": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ObjectPage/ZMEL_CONS_OWNER/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ObjectPage|ZMEL_CONS_RENTOR": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ObjectPage/ZMEL_CONS_RENTOR/i18n.properties"
+			}
+		},
+		"extends": {},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"routing": {
+			"targets": {
+				"ZMEL_GEO": {
+					"viewType": "XML",
+					"viewName": "ZMEL_GEO",
+					"viewLevel": 1
+				},
+				"ZMEL_GEO_XML": {
+					"viewType": "XML",
+					"viewName": "ZMEL_GEO_XML",
+					"viewLevel": 1
+				}
+			}
+		}
+	},
+	"sap.ui.generic.app": {
+		"_version": "1.3.0",
+		"settings": {
+			"flexibleColumnLayout": {
+				"defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+				"defaultThreeColumnLayoutType": "ThreeColumnsEndExpanded"
+			}
+		},
+		"pages": {
+			"ListReport|ZMEL_CONS_REGION": {
+				"entitySet": "ZMEL_CONS_REGION",
+				"component": {
+					"name": "sap.suite.ui.generic.template.ListReport",
+					"list": true,
+					"settings": {
+						"smartVariantManagement": false
+					}
+				},
+				"pages": {
+					"ObjectPage|ZMEL_CONS_REGION": {
+						"entitySet": "ZMEL_CONS_REGION",
+						"component": {
+							"name": "sap.suite.ui.generic.template.ObjectPage"
+						},
+						"pages": {
+							"ObjectPage|to_CITYY": {
+								"navigationProperty": "to_CITYY",
+								"entitySet": "ZMEL_CONS_CITY",
+								"component": {
+									"name": "sap.suite.ui.generic.template.ObjectPage"
+								},
+								"pages": {
+									"ObjectPage|to_district": {
+										"entitySet": "ZMEL_CONS_DISTRICT",
+										"component": {
+											"name": "sap.suite.ui.generic.template.ObjectPage"
+										},
+										"navigationProperty": "to_district",
+										"pages": {
+											"ObjectPage|to_house": {
+												"entitySet": "ZMEL_CONS_HOUSE",
+												"component": {
+													"name": "sap.suite.ui.generic.template.ObjectPage"
+												},
+												"navigationProperty": "to_house",
+												"pages": {
+													"ObjectPage|to_flat": {
+														"entitySet": "ZMEL_CONS_FLAT",
+														"component": {
+															"name": "sap.suite.ui.generic.template.ObjectPage"
+														},
+														"navigationProperty": "to_flat",
+														"pages": {
+															"ObjectPage|to_owner": {
+																"entitySet": "ZMEL_CONS_OWNER",
+																"component": {
+																	"name": "sap.suite.ui.generic.template.ObjectPage"
+																},
+																"navigationProperty": "to_owner"
+															},
+															"ObjectPage|to_rentor": {
+																"entitySet": "ZMEL_CONS_RENTOR",
+																"component": {
+																	"name": "sap.suite.ui.generic.template.ObjectPage"
+																},
+																"navigationProperty": "to_rentor"
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

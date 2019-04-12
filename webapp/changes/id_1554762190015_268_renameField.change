@@ -1,0 +1,45 @@
+{
+	"fileName": "id_1554762190015_268_renameField",
+	"fileType": "change",
+	"changeType": "renameField",
+	"moduleName": "",
+	"reference": "ZMEL_FLEX.Component",
+	"packageName": "$TMP",
+	"content": {
+		"originalControlType": "sap.ui.comp.smartform.GroupElement"
+	},
+	"selector": {
+		"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_HOUSE--com.sap.vocabularies.UI.v1.LineItem::floors_count::GroupElement",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {
+		"fieldLabel": {
+			"value": "Number of floors",
+			"type": "XFLD"
+		}
+	},
+	"namespace": "apps/ZMEL_FLEX/changes/",
+	"projectId": "ZMEL_FLEX",
+	"creation": "2019-04-08T22:24:15.403Z",
+	"originalLanguage": "RU",
+	"conditions": {},
+	"context": "",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.60.10",
+		"sourceChangeFileName": "",
+		"compositeCommand": ""
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"validAppVersions": {
+		"creation": "1.0.0",
+		"from": "1.0.0",
+		"to": "1.0.0"
+	},
+	"jsOnly": false,
+	"variantReference": ""
+}

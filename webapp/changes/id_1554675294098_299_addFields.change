@@ -1,0 +1,53 @@
+{
+	"fileName": "id_1554675294098_299_addFields",
+	"fileType": "change",
+	"changeType": "addFields",
+	"moduleName": "",
+	"reference": "ZMEL_FLEX.Component",
+	"packageName": "$TMP",
+	"content": {
+		"field": {
+			"value": ["fyear"],
+			"valueProperty": ["value"],
+			"selector": {
+				"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_HOUSE--com.sap.vocabularies.UI.v1.LineItem::FormGroup_ZMEL_CONS_HOUSEType_fyear",
+				"idIsLocal": false
+			},
+			"jsTypes": ["sap.ui.comp.smartfield.SmartField"],
+			"index": 1
+		}
+	},
+	"selector": {
+		"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_HOUSE--com.sap.vocabularies.UI.v1.LineItem::FormGroup",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/ZMEL_FLEX/changes/",
+	"projectId": "ZMEL_FLEX",
+	"creation": "2019-04-07T22:14:58.849Z",
+	"originalLanguage": "RU",
+	"conditions": {},
+	"context": "",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.60.10",
+		"sourceChangeFileName": "",
+		"compositeCommand": "id_1554675294088_296_composite"
+	},
+	"oDataInformation": {
+		"oDataServiceUri": "/sap/opu/odata/sap/ZMEL_CONS_REGION_CDS/",
+		"propertyName": "fyear",
+		"entityType": "ZMEL_CONS_HOUSEType"
+	},
+	"dependentSelector": {},
+	"validAppVersions": {
+		"creation": "1.0.0",
+		"from": "1.0.0",
+		"to": "1.0.0"
+	},
+	"jsOnly": false,
+	"variantReference": ""
+}

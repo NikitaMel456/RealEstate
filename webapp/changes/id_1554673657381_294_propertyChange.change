@@ -1,0 +1,42 @@
+{
+	"fileName": "id_1554673657381_294_propertyChange",
+	"fileType": "change",
+	"changeType": "propertyChange",
+	"moduleName": "",
+	"reference": "ZMEL_FLEX.Component",
+	"packageName": "$TMP",
+	"content": {
+		"property": "mode",
+		"newValue": "Expanded"
+	},
+	"selector": {
+		"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_HOUSE--com.sap.vocabularies.UI.v1.GeoLocation::SubSection",
+		"type": "sap.uxap.ObjectPageSubSection",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/ZMEL_FLEX/changes/",
+	"projectId": "ZMEL_FLEX",
+	"creation": "2019-04-07T21:48:47.475Z",
+	"originalLanguage": "RU",
+	"conditions": {},
+	"context": "",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.60.10",
+		"sourceChangeFileName": "",
+		"compositeCommand": ""
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"validAppVersions": {
+		"creation": "1.0.0",
+		"from": "1.0.0",
+		"to": "1.0.0"
+	},
+	"jsOnly": false,
+	"variantReference": ""
+}

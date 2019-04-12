@@ -1,0 +1,76 @@
+{
+	"fileName": "id_1554756311222_326_moveControls",
+	"fileType": "change",
+	"changeType": "moveControls",
+	"moduleName": "",
+	"reference": "ZMEL_FLEX.Component",
+	"packageName": "$TMP",
+	"content": {
+		"movedElements": [{
+			"selector": {
+				"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_DISTRICT--GeneralInformation::Section",
+				"idIsLocal": false
+			},
+			"sourceIndex": 1,
+			"targetIndex": 0
+		}],
+		"source": {
+			"selector": {
+				"aggregation": "sections",
+				"type": "sap.uxap.ObjectPageLayout",
+				"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_DISTRICT--objectPage",
+				"idIsLocal": false
+			}
+		},
+		"target": {
+			"selector": {
+				"aggregation": "sections",
+				"type": "sap.uxap.ObjectPageLayout",
+				"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_DISTRICT--objectPage",
+				"idIsLocal": false
+			}
+		}
+	},
+	"selector": {
+		"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_DISTRICT--objectPage",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/ZMEL_FLEX/changes/",
+	"projectId": "ZMEL_FLEX",
+	"creation": "2019-04-08T20:45:21.568Z",
+	"originalLanguage": "RU",
+	"conditions": {},
+	"context": "",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.60.10",
+		"sourceChangeFileName": "",
+		"compositeCommand": ""
+	},
+	"oDataInformation": {},
+	"dependentSelector": {
+		"source": {
+			"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_DISTRICT--objectPage",
+			"idIsLocal": false
+		},
+		"target": {
+			"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_DISTRICT--objectPage",
+			"idIsLocal": false
+		},
+		"movedElements": [{
+			"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_DISTRICT--GeneralInformation::Section",
+			"idIsLocal": false
+		}]
+	},
+	"validAppVersions": {
+		"creation": "1.0.0",
+		"from": "1.0.0",
+		"to": "1.0.0"
+	},
+	"jsOnly": false,
+	"variantReference": ""
+}

@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "ZMEL_FLEX.ZMEL_FLEX",
+        "description": "Real Estate",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#ZMEL_FLEX-manage",
+        "navigationComponentName": "ZMEL_FLEX",
+        "intentSemanticObject": "ZMEL_FLEX",
+        "intentAction": "manage",
+        "html5ApplicationName": "zmelflex",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "b41ca66e-19dc-4abb-acc8-78414150e1e4"
+        ],
+        "contentPackages": [
+            "2b89f366-7e10-46e9-bd09-d0ad4407fdde"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Real Estate",
+        "subtitle": "",
+        "searchKeywords": "Real Estate,",
+        "displayIconUrl": "sap-icon://building",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://webidecp-c5272020trial.dispatcher.hanatrial.ondemand.com/destinations/S4G/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='S4HCLNT100')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZMEL_CONS_REGION_CDS" xml:lang="ru" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="ZMEL_BV_RENT_STType" sap:label="Rent Status" sap:content-version="1">
+				<Key><PropertyRef Name="rent_status"/></Key><Property Name="rent_status" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="CHAR20"
+					sap:quickinfo="CHAR 20"/></EntityType>
+			<EntityType Name="ZMEL_CONS_CITYType" sap:label="CITY cons" sap:content-version="1">
+				<Key><PropertyRef Name="city_uuid"/></Key><Property Name="city_uuid" Type="Edm.Guid" Nullable="false" sap:label="Key" sap:quickinfo="UUID serving as key (parent key, root key)"/><Property Name="region_uuid" Type="Edm.Guid" sap:label="Key" sap:quickinfo="UUID serving as key (parent key, root key)"/><Property Name="city_name" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="" sap:quickinfo="30 знаков"/><NavigationProperty Name="to_district" Relationship="ZMEL_CONS_REGION_CDS.assoc_E1BA043069650841BD7F5AA794D8B3B8"
+					FromRole="FromRole_assoc_E1BA043069650841BD7F5AA794D8B3B8" ToRole="ToRole_assoc_E1BA043069650841BD7F5AA794D8B3B8"/><NavigationProperty Name="to_region" Relationship="ZMEL_CONS_REGION_CDS.assoc_60DBFF90AFE7B4F51AAD2C6670FF9FAB"
+					FromRole="FromRole_assoc_60DBFF90AFE7B4F51AAD2C6670FF9FAB" ToRole="ToRole_assoc_60DBFF90AFE7B4F51AAD2C6670FF9FAB"/></EntityType>
+			<EntityType Name="ZMEL_CONS_DISTRICTType" sap:label="DISTRICT cons" sap:content-version="1">
+				<Key><PropertyRef Name="district_uuid"/></Key><Property Name="district_uuid" Type="Edm.Guid" Nullable="false" sap:label="Key" sap:quickinfo="UUID serving as key (parent key, root key)"/><Property Name="city_uuid" Type="Edm.Guid" sap:label="Key" sap:quickinfo="UUID serving as key (parent key, root key)"/><Property Name="district_name" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="" sap:quickinfo="30 знаков"/><NavigationProperty Name="to_cityi" Relationship="ZMEL_CONS_REGION_CDS.assoc_7D5F65C10634159006591459AE0D86BC"
+					FromRole="FromRole_assoc_7D5F65C10634159006591459AE0D86BC" ToRole="ToRole_assoc_7D5F65C10634159006591459AE0D86BC"/><NavigationProperty Name="to_house" Relationship="ZMEL_CONS_REGION_CDS.assoc_A252002EF96AD18AF9B5215298DBAA2E"
+					FromRole="FromRole_assoc_A252002EF96AD18AF9B5215298DBAA2E" ToRole="ToRole_assoc_A252002EF96AD18AF9B5215298DBAA2E"/></EntityType>
+			<EntityType Name="ZMEL_CONS_FLATType" sap:label="FLAT cons" sap:content-version="1">
+				<Key><PropertyRef Name="flat_uuid"/></Key><Property Name="flat_uuid" Type="Edm.Guid" Nullable="false" sap:label="Key" sap:quickinfo="UUID serving as key (parent key, root key)"/><Property Name="rent_type" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Rent type" sap:quickinfo="CHAR 20"
+					sap:value-list="standard"/><Property Name="owner_uuid" Type="Edm.Guid" sap:label="Key" sap:quickinfo="UUID serving as key (parent key, root key)"/><Property Name="crea_utc_date_time" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:creatable="false" sap:updatable="false"/><Property Name="house_uuid" Type="Edm.Guid" sap:label="Key" sap:quickinfo="UUID serving as key (parent key, root key)"/><Property Name="floor" Type="Edm.Byte" sap:label="int" sap:quickinfo="Фиктив. для B20 int1 (везде локально!)"/><Property Name="flat_number" Type="Edm.Byte" sap:label="int" sap:quickinfo="Фиктив. для B20 int1 (везде локально!)"/><Property Name="rooms_count" Type="Edm.Byte" sap:label="int" sap:quickinfo="Фиктив. для B20 int1 (везде локально!)"/><Property Name="apartments_size" Type="Edm.Byte" sap:label="int" sap:quickinfo="Фиктив. для B20 int1 (везде локально!)"/><Property Name="life_size" Type="Edm.Byte" sap:label="int" sap:quickinfo="Фиктив. для B20 int1 (везде локально!)"/><Property Name="price" Type="Edm.Double" sap:label="Float" sap:quickinfo="Простой элемент данных типа FLOAT"/><Property Name="rented" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Булево"
+					sap:quickinfo="Булево значение (&quot;X&quot; = истинно &quot; &quot; = ложно)"/><NavigationProperty Name="to_house" Relationship="ZMEL_CONS_REGION_CDS.assoc_D3EDE794B5691F9C54BE30F9F6D01DFF"
+					FromRole="FromRole_assoc_D3EDE794B5691F9C54BE30F9F6D01DFF" ToRole="ToRole_assoc_D3EDE794B5691F9C54BE30F9F6D01DFF"/><NavigationProperty Name="to_owner" Relationship="ZMEL_CONS_REGION_CDS.assoc_3768C83AB4C0589C66329A4F883B8A00"
+					FromRole="FromRole_assoc_3768C83AB4C0589C66329A4F883B8A00" ToRole="ToRole_assoc_3768C83AB4C0589C66329A4F883B8A00"/><NavigationProperty Name="to_rent" Relationship="ZMEL_CONS_REGION_CDS.assoc_9810B368B40FFAFF7F41D0F4B02D93E1"
+					FromRole="FromRole_assoc_9810B368B40FFAFF7F41D0F4B02D93E1" ToRole="ToRole_assoc_9810B368B40FFAFF7F41D0F4B02D93E1"/><NavigationProperty Name="to_rentor" Relationship="ZMEL_CONS_REGION_CDS.assoc_211474F6749DB2F5DC2A7C8DCDF0296C"
+					FromRole="FromRole_assoc_211474F6749DB2F5DC2A7C8DCDF0296C" ToRole="ToRole_assoc_211474F6749DB2F5DC2A7C8DCDF0296C"/></EntityType>
+			<EntityType Name="ZMEL_CONS_HOUSEType" sap:label="House cons" sap:content-version="1">
+				<Key><PropertyRef Name="house_uuid"/></Key><Property Name="house_uuid" Type="Edm.Guid" Nullable="false" sap:label="Key" sap:quickinfo="UUID serving as key (parent key, root key)"/><Property Name="district_uuid" Type="Edm.Guid" sap:label="Key" sap:quickinfo="UUID serving as key (parent key, root key)"/><Property Name="floors_count" Type="Edm.Byte" sap:label="int" sap:quickinfo="Фиктив. для B20 int1 (везде локально!)"/><Property Name="FlatCount" Type="Edm.Int32" sap:label="Flats for rent" sap:creatable="false" sap:updatable="false"/><Property Name="address" Type="Edm.String" MaxLength="80" sap:display-format="UpperCase" sap:label="Char80" sap:quickinfo="Char 80"/><Property Name="fyear" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label=""
+					sap:quickinfo="Более точно не опр. область, возм. исп. для уровня &quot;заплат&quot;"/><Property Name="elevator" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Булев переключатель"
+					sap:quickinfo="Булев переключатель (X=верно, -=НекоррПроб = неопредел.)"/><NavigationProperty Name="to_district" Relationship="ZMEL_CONS_REGION_CDS.assoc_69258EE030D1E8C9CC2D959BBE4D4E32"
+					FromRole="FromRole_assoc_69258EE030D1E8C9CC2D959BBE4D4E32" ToRole="ToRole_assoc_69258EE030D1E8C9CC2D959BBE4D4E32"/><NavigationProperty Name="to_flat" Relationship="ZMEL_CONS_REGION_CDS.assoc_5F2F96DECCF325E88F519B9AB0F9D4FE"
+					FromRole="FromRole_assoc_5F2F96DECCF325E88F519B9AB0F9D4FE" ToRole="ToRole_assoc_5F2F96DECCF325E88F519B9AB0F9D4FE"/></EntityType>
+			<EntityType Name="ZMEL_CONS_OWNERType" sap:label="OWNER cons" sap:content-version="1">
+				<Key><PropertyRef Name="owner_uuid"/></Key><Property Name="owner_uuid" Type="Edm.Guid" Nullable="false" sap:label="Key" sap:quickinfo="UUID serving as key (parent key, root key)"/><Property Name="firstname" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="" sap:quickinfo="30 знаков"/><Property Name="secondname" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="" sap:quickinfo="30 знаков"/><Property Name="fathersname" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="" sap:quickinfo="30 знаков"/><Property Name="phone" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase" sap:label="CHAR15" sap:quickinfo="Char 15"/><Property Name="email" Type="Edm.String" MaxLength="50" sap:label="c" sap:quickinfo="Комментарий"/><Property Name="comments" Type="Edm.String" MaxLength="120" sap:display-format="UpperCase" sap:label="" sap:quickinfo="char120"/><Property Name="flat_uuid" Type="Edm.Guid" sap:label="Key" sap:quickinfo="UUID serving as key (parent key, root key)"/><NavigationProperty Name="to_flat" Relationship="ZMEL_CONS_REGION_CDS.assoc_59BF98C15CF52606466A08258AFC81DA"
+					FromRole="FromRole_assoc_59BF98C15CF52606466A08258AFC81DA" ToRole="ToRole_assoc_59BF98C15CF52606466A08258AFC81DA"/></EntityType>
+			<EntityType Name="ZMEL_CONS_REGIONType" sap:label="REGION cons" sap:content-version="1">
+				<Key><PropertyRef Name="region_uuid"/></Key><Property Name="region_uuid" Type="Edm.Guid" Nullable="false" sap:label="Key" sap:quickinfo="UUID serving as key (parent key, root key)"/><Property Name="reg_name" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="" sap:quickinfo="30 знаков"/><NavigationProperty Name="to_CITYY" Relationship="ZMEL_CONS_REGION_CDS.assoc_647C5FB704F1D687C08296BB6972D0EA"
+					FromRole="FromRole_assoc_647C5FB704F1D687C08296BB6972D0EA" ToRole="ToRole_assoc_647C5FB704F1D687C08296BB6972D0EA"/></EntityType>
+			<EntityType Name="ZMEL_CONS_RENTORType" sap:label="Rentor cons" sap:content-version="1">
+				<Key><PropertyRef Name="rentor_uuid"/></Key><Property Name="rentor_uuid" Type="Edm.Guid" Nullable="false" sap:label="Key" sap:quickinfo="UUID serving as key (parent key, root key)"/><Property Name="flat_uuid" Type="Edm.Guid" sap:label="Key" sap:quickinfo="UUID serving as key (parent key, root key)"/><Property Name="fname" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="CHAR20" sap:quickinfo="CHAR 20"/><Property Name="sname" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="CHAR20" sap:quickinfo="CHAR 20"/><Property Name="fathname" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="CHAR20" sap:quickinfo="CHAR 20"/><Property Name="phone" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="CHAR20" sap:quickinfo="CHAR 20"/><Property Name="email" Type="Edm.String" MaxLength="50" sap:label="c" sap:quickinfo="Комментарий"/><Property Name="pass_no" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="CHAR20" sap:quickinfo="CHAR 20"/><Property Name="addit_data" Type="Edm.String" MaxLength="200" sap:display-format="UpperCase" sap:label="Текст (200 знаков)"
+					sap:quickinfo="Поле текста, длина 200"/><NavigationProperty Name="to_flat" Relationship="ZMEL_CONS_REGION_CDS.assoc_4B1C051208B4D497179A00D03E235EC2"
+					FromRole="FromRole_assoc_4B1C051208B4D497179A00D03E235EC2" ToRole="ToRole_assoc_4B1C051208B4D497179A00D03E235EC2"/></EntityType>
+			<Association Name="assoc_647C5FB704F1D687C08296BB6972D0EA" sap:content-version="1"><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_REGIONType" Multiplicity="1" Role="FromRole_assoc_647C5FB704F1D687C08296BB6972D0EA"/><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_CITYType" Multiplicity="*" Role="ToRole_assoc_647C5FB704F1D687C08296BB6972D0EA"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_647C5FB704F1D687C08296BB6972D0EA"><PropertyRef Name="region_uuid"/></Principal>
+					<Dependent Role="ToRole_assoc_647C5FB704F1D687C08296BB6972D0EA"><PropertyRef Name="region_uuid"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_4B1C051208B4D497179A00D03E235EC2" sap:content-version="1"><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_RENTORType" Multiplicity="1" Role="FromRole_assoc_4B1C051208B4D497179A00D03E235EC2"/><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_FLATType" Multiplicity="1" Role="ToRole_assoc_4B1C051208B4D497179A00D03E235EC2"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_4B1C051208B4D497179A00D03E235EC2"><PropertyRef Name="flat_uuid"/></Principal>
+					<Dependent Role="FromRole_assoc_4B1C051208B4D497179A00D03E235EC2"><PropertyRef Name="flat_uuid"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_D3EDE794B5691F9C54BE30F9F6D01DFF" sap:content-version="1"><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_FLATType" Multiplicity="1" Role="FromRole_assoc_D3EDE794B5691F9C54BE30F9F6D01DFF"/><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_HOUSEType" Multiplicity="1" Role="ToRole_assoc_D3EDE794B5691F9C54BE30F9F6D01DFF"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_D3EDE794B5691F9C54BE30F9F6D01DFF"><PropertyRef Name="house_uuid"/></Principal>
+					<Dependent Role="FromRole_assoc_D3EDE794B5691F9C54BE30F9F6D01DFF"><PropertyRef Name="house_uuid"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_3768C83AB4C0589C66329A4F883B8A00" sap:content-version="1"><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_FLATType" Multiplicity="1" Role="FromRole_assoc_3768C83AB4C0589C66329A4F883B8A00"/><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_OWNERType" Multiplicity="*" Role="ToRole_assoc_3768C83AB4C0589C66329A4F883B8A00"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_3768C83AB4C0589C66329A4F883B8A00"><PropertyRef Name="flat_uuid"/></Principal>
+					<Dependent Role="ToRole_assoc_3768C83AB4C0589C66329A4F883B8A00"><PropertyRef Name="flat_uuid"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_9810B368B40FFAFF7F41D0F4B02D93E1" sap:content-version="1"><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_FLATType" Multiplicity="1" Role="FromRole_assoc_9810B368B40FFAFF7F41D0F4B02D93E1"/><End Type="ZMEL_CONS_REGION_CDS.ZMEL_BV_RENT_STType" Multiplicity="0..1" Role="ToRole_assoc_9810B368B40FFAFF7F41D0F4B02D93E1"/></Association>
+			<Association Name="assoc_211474F6749DB2F5DC2A7C8DCDF0296C" sap:content-version="1"><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_FLATType" Multiplicity="1" Role="FromRole_assoc_211474F6749DB2F5DC2A7C8DCDF0296C"/><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_RENTORType" Multiplicity="1" Role="ToRole_assoc_211474F6749DB2F5DC2A7C8DCDF0296C"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_211474F6749DB2F5DC2A7C8DCDF0296C"><PropertyRef Name="flat_uuid"/></Principal>
+					<Dependent Role="ToRole_assoc_211474F6749DB2F5DC2A7C8DCDF0296C"><PropertyRef Name="flat_uuid"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_7D5F65C10634159006591459AE0D86BC" sap:content-version="1"><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_DISTRICTType" Multiplicity="1" Role="FromRole_assoc_7D5F65C10634159006591459AE0D86BC"/><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_CITYType" Multiplicity="1" Role="ToRole_assoc_7D5F65C10634159006591459AE0D86BC"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_7D5F65C10634159006591459AE0D86BC"><PropertyRef Name="city_uuid"/></Principal>
+					<Dependent Role="FromRole_assoc_7D5F65C10634159006591459AE0D86BC"><PropertyRef Name="city_uuid"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_A252002EF96AD18AF9B5215298DBAA2E" sap:content-version="1"><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_DISTRICTType" Multiplicity="1" Role="FromRole_assoc_A252002EF96AD18AF9B5215298DBAA2E"/><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_HOUSEType" Multiplicity="*" Role="ToRole_assoc_A252002EF96AD18AF9B5215298DBAA2E"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_A252002EF96AD18AF9B5215298DBAA2E"><PropertyRef Name="district_uuid"/></Principal>
+					<Dependent Role="ToRole_assoc_A252002EF96AD18AF9B5215298DBAA2E"><PropertyRef Name="district_uuid"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_60DBFF90AFE7B4F51AAD2C6670FF9FAB" sap:content-version="1"><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_CITYType" Multiplicity="1" Role="FromRole_assoc_60DBFF90AFE7B4F51AAD2C6670FF9FAB"/><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_REGIONType" Multiplicity="1" Role="ToRole_assoc_60DBFF90AFE7B4F51AAD2C6670FF9FAB"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_60DBFF90AFE7B4F51AAD2C6670FF9FAB"><PropertyRef Name="region_uuid"/></Principal>
+					<Dependent Role="FromRole_assoc_60DBFF90AFE7B4F51AAD2C6670FF9FAB"><PropertyRef Name="region_uuid"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_E1BA043069650841BD7F5AA794D8B3B8" sap:content-version="1"><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_CITYType" Multiplicity="1" Role="FromRole_assoc_E1BA043069650841BD7F5AA794D8B3B8"/><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_DISTRICTType" Multiplicity="*" Role="ToRole_assoc_E1BA043069650841BD7F5AA794D8B3B8"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_E1BA043069650841BD7F5AA794D8B3B8"><PropertyRef Name="city_uuid"/></Principal>
+					<Dependent Role="ToRole_assoc_E1BA043069650841BD7F5AA794D8B3B8"><PropertyRef Name="city_uuid"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_59BF98C15CF52606466A08258AFC81DA" sap:content-version="1"><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_OWNERType" Multiplicity="1" Role="FromRole_assoc_59BF98C15CF52606466A08258AFC81DA"/><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_FLATType" Multiplicity="1" Role="ToRole_assoc_59BF98C15CF52606466A08258AFC81DA"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_59BF98C15CF52606466A08258AFC81DA"><PropertyRef Name="flat_uuid"/></Principal>
+					<Dependent Role="FromRole_assoc_59BF98C15CF52606466A08258AFC81DA"><PropertyRef Name="flat_uuid"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_69258EE030D1E8C9CC2D959BBE4D4E32" sap:content-version="1"><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_HOUSEType" Multiplicity="1" Role="FromRole_assoc_69258EE030D1E8C9CC2D959BBE4D4E32"/><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_DISTRICTType" Multiplicity="1" Role="ToRole_assoc_69258EE030D1E8C9CC2D959BBE4D4E32"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_69258EE030D1E8C9CC2D959BBE4D4E32"><PropertyRef Name="district_uuid"/></Principal>
+					<Dependent Role="FromRole_assoc_69258EE030D1E8C9CC2D959BBE4D4E32"><PropertyRef Name="district_uuid"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_5F2F96DECCF325E88F519B9AB0F9D4FE" sap:content-version="1"><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_HOUSEType" Multiplicity="1" Role="FromRole_assoc_5F2F96DECCF325E88F519B9AB0F9D4FE"/><End Type="ZMEL_CONS_REGION_CDS.ZMEL_CONS_FLATType" Multiplicity="*" Role="ToRole_assoc_5F2F96DECCF325E88F519B9AB0F9D4FE"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_5F2F96DECCF325E88F519B9AB0F9D4FE"><PropertyRef Name="house_uuid"/></Principal>
+					<Dependent Role="ToRole_assoc_5F2F96DECCF325E88F519B9AB0F9D4FE"><PropertyRef Name="house_uuid"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZMEL_CONS_REGION_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZMEL_BV_RENT_ST" EntityType="ZMEL_CONS_REGION_CDS.ZMEL_BV_RENT_STType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZMEL_CONS_CITY" EntityType="ZMEL_CONS_REGION_CDS.ZMEL_CONS_CITYType" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZMEL_CONS_DISTRICT" EntityType="ZMEL_CONS_REGION_CDS.ZMEL_CONS_DISTRICTType" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZMEL_CONS_FLAT" EntityType="ZMEL_CONS_REGION_CDS.ZMEL_CONS_FLATType" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZMEL_CONS_HOUSE" EntityType="ZMEL_CONS_REGION_CDS.ZMEL_CONS_HOUSEType" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZMEL_CONS_OWNER" EntityType="ZMEL_CONS_REGION_CDS.ZMEL_CONS_OWNERType" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZMEL_CONS_REGION" EntityType="ZMEL_CONS_REGION_CDS.ZMEL_CONS_REGIONType" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZMEL_CONS_RENTOR" EntityType="ZMEL_CONS_REGION_CDS.ZMEL_CONS_RENTORType" sap:searchable="true" sap:content-version="1"/>
+				<AssociationSet Name="assoc_211474F6749DB2F5DC2A7C8DCDF0296C" Association="ZMEL_CONS_REGION_CDS.assoc_211474F6749DB2F5DC2A7C8DCDF0296C"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZMEL_CONS_FLAT" Role="FromRole_assoc_211474F6749DB2F5DC2A7C8DCDF0296C"/><End EntitySet="ZMEL_CONS_RENTOR" Role="ToRole_assoc_211474F6749DB2F5DC2A7C8DCDF0296C"/></AssociationSet>
+				<AssociationSet Name="assoc_A252002EF96AD18AF9B5215298DBAA2E" Association="ZMEL_CONS_REGION_CDS.assoc_A252002EF96AD18AF9B5215298DBAA2E"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZMEL_CONS_DISTRICT" Role="FromRole_assoc_A252002EF96AD18AF9B5215298DBAA2E"/><End EntitySet="ZMEL_CONS_HOUSE" Role="ToRole_assoc_A252002EF96AD18AF9B5215298DBAA2E"/></AssociationSet>
+				<AssociationSet Name="assoc_9810B368B40FFAFF7F41D0F4B02D93E1" Association="ZMEL_CONS_REGION_CDS.assoc_9810B368B40FFAFF7F41D0F4B02D93E1"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZMEL_CONS_FLAT" Role="FromRole_assoc_9810B368B40FFAFF7F41D0F4B02D93E1"/><End EntitySet="ZMEL_BV_RENT_ST" Role="ToRole_assoc_9810B368B40FFAFF7F41D0F4B02D93E1"/></AssociationSet>
+				<AssociationSet Name="assoc_3768C83AB4C0589C66329A4F883B8A00" Association="ZMEL_CONS_REGION_CDS.assoc_3768C83AB4C0589C66329A4F883B8A00"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZMEL_CONS_FLAT" Role="FromRole_assoc_3768C83AB4C0589C66329A4F883B8A00"/><End EntitySet="ZMEL_CONS_OWNER" Role="ToRole_assoc_3768C83AB4C0589C66329A4F883B8A00"/></AssociationSet>
+				<AssociationSet Name="assoc_7D5F65C10634159006591459AE0D86BC" Association="ZMEL_CONS_REGION_CDS.assoc_7D5F65C10634159006591459AE0D86BC"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZMEL_CONS_DISTRICT" Role="FromRole_assoc_7D5F65C10634159006591459AE0D86BC"/><End EntitySet="ZMEL_CONS_CITY" Role="ToRole_assoc_7D5F65C10634159006591459AE0D86BC"/></AssociationSet>
+				<AssociationSet Name="assoc_647C5FB704F1D687C08296BB6972D0EA" Association="ZMEL_CONS_REGION_CDS.assoc_647C5FB704F1D687C08296BB6972D0EA"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZMEL_CONS_REGION" Role="FromRole_assoc_647C5FB704F1D687C08296BB6972D0EA"/><End EntitySet="ZMEL_CONS_CITY" Role="ToRole_assoc_647C5FB704F1D687C08296BB6972D0EA"/></AssociationSet>
+				<AssociationSet Name="assoc_59BF98C15CF52606466A08258AFC81DA" Association="ZMEL_CONS_REGION_CDS.assoc_59BF98C15CF52606466A08258AFC81DA"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZMEL_CONS_OWNER" Role="FromRole_assoc_59BF98C15CF52606466A08258AFC81DA"/><End EntitySet="ZMEL_CONS_FLAT" Role="ToRole_assoc_59BF98C15CF52606466A08258AFC81DA"/></AssociationSet>
+				<AssociationSet Name="assoc_E1BA043069650841BD7F5AA794D8B3B8" Association="ZMEL_CONS_REGION_CDS.assoc_E1BA043069650841BD7F5AA794D8B3B8"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZMEL_CONS_CITY" Role="FromRole_assoc_E1BA043069650841BD7F5AA794D8B3B8"/><End EntitySet="ZMEL_CONS_DISTRICT" Role="ToRole_assoc_E1BA043069650841BD7F5AA794D8B3B8"/></AssociationSet>
+				<AssociationSet Name="assoc_4B1C051208B4D497179A00D03E235EC2" Association="ZMEL_CONS_REGION_CDS.assoc_4B1C051208B4D497179A00D03E235EC2"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZMEL_CONS_RENTOR" Role="FromRole_assoc_4B1C051208B4D497179A00D03E235EC2"/><End EntitySet="ZMEL_CONS_FLAT" Role="ToRole_assoc_4B1C051208B4D497179A00D03E235EC2"/></AssociationSet>
+				<AssociationSet Name="assoc_D3EDE794B5691F9C54BE30F9F6D01DFF" Association="ZMEL_CONS_REGION_CDS.assoc_D3EDE794B5691F9C54BE30F9F6D01DFF"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZMEL_CONS_FLAT" Role="FromRole_assoc_D3EDE794B5691F9C54BE30F9F6D01DFF"/><End EntitySet="ZMEL_CONS_HOUSE" Role="ToRole_assoc_D3EDE794B5691F9C54BE30F9F6D01DFF"/></AssociationSet>
+				<AssociationSet Name="assoc_60DBFF90AFE7B4F51AAD2C6670FF9FAB" Association="ZMEL_CONS_REGION_CDS.assoc_60DBFF90AFE7B4F51AAD2C6670FF9FAB"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZMEL_CONS_CITY" Role="FromRole_assoc_60DBFF90AFE7B4F51AAD2C6670FF9FAB"/><End EntitySet="ZMEL_CONS_REGION" Role="ToRole_assoc_60DBFF90AFE7B4F51AAD2C6670FF9FAB"/></AssociationSet>
+				<AssociationSet Name="assoc_69258EE030D1E8C9CC2D959BBE4D4E32" Association="ZMEL_CONS_REGION_CDS.assoc_69258EE030D1E8C9CC2D959BBE4D4E32"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZMEL_CONS_HOUSE" Role="FromRole_assoc_69258EE030D1E8C9CC2D959BBE4D4E32"/><End EntitySet="ZMEL_CONS_DISTRICT" Role="ToRole_assoc_69258EE030D1E8C9CC2D959BBE4D4E32"/></AssociationSet>
+				<AssociationSet Name="assoc_5F2F96DECCF325E88F519B9AB0F9D4FE" Association="ZMEL_CONS_REGION_CDS.assoc_5F2F96DECCF325E88F519B9AB0F9D4FE"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZMEL_CONS_HOUSE" Role="FromRole_assoc_5F2F96DECCF325E88F519B9AB0F9D4FE"/><End EntitySet="ZMEL_CONS_FLAT" Role="ToRole_assoc_5F2F96DECCF325E88F519B9AB0F9D4FE"/></AssociationSet>
+			</EntityContainer>
+			<Annotations Target="ZMEL_CONS_REGION_CDS.ZMEL_CONS_FLATType/rent_type" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Rent Status"/><PropertyValue Property="CollectionPath" String="ZMEL_BV_RENT_ST"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="rent_type"/><PropertyValue Property="ValueListProperty" String="rent_status"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZMEL_CONS_REGION_CDS.ZMEL_CONS_CITYType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>city_uuid</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZMEL_CONS_REGION_CDS.ZMEL_CONS_DISTRICTType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>district_uuid</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZMEL_CONS_REGION_CDS.ZMEL_CONS_FLATType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>flat_uuid</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZMEL_CONS_REGION_CDS.ZMEL_CONS_HOUSEType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>house_uuid</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZMEL_CONS_REGION_CDS.ZMEL_CONS_OWNERType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>owner_uuid</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZMEL_CONS_REGION_CDS.ZMEL_CONS_REGIONType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>region_uuid</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZMEL_CONS_REGION_CDS.ZMEL_CONS_RENTORType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>rentor_uuid</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations><atom:link rel="self"
+				href="https://webidecp-c5272020trial.dispatcher.hanatrial.ondemand.com/destinations/S4G/sap/opu/odata/sap/ZMEL_CONS_REGION_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-c5272020trial.dispatcher.hanatrial.ondemand.com/destinations/S4G/sap/opu/odata/sap/ZMEL_CONS_REGION_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

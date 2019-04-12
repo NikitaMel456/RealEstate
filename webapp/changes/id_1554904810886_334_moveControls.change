@@ -1,0 +1,76 @@
+{
+	"fileName": "id_1554904810886_334_moveControls",
+	"fileType": "change",
+	"changeType": "moveControls",
+	"moduleName": "",
+	"reference": "ZMEL_FLEX.Component",
+	"packageName": "$TMP",
+	"content": {
+		"movedElements": [{
+			"selector": {
+				"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_OWNER--template::UpAndDownNavigation",
+				"idIsLocal": false
+			},
+			"sourceIndex": 3,
+			"targetIndex": 0
+		}],
+		"source": {
+			"selector": {
+				"aggregation": "actions",
+				"type": "sap.uxap.ObjectPageHeader",
+				"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_OWNER--objectPageHeader",
+				"idIsLocal": false
+			}
+		},
+		"target": {
+			"selector": {
+				"aggregation": "actions",
+				"type": "sap.uxap.ObjectPageHeader",
+				"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_OWNER--objectPageHeader",
+				"idIsLocal": false
+			}
+		}
+	},
+	"selector": {
+		"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_OWNER--objectPageHeader",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/ZMEL_FLEX/changes/",
+	"projectId": "ZMEL_FLEX",
+	"creation": "2019-04-10T14:00:45.350Z",
+	"originalLanguage": "RU",
+	"conditions": {},
+	"context": "",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.63.1",
+		"sourceChangeFileName": "",
+		"compositeCommand": "id_1554904810882_333_composite"
+	},
+	"oDataInformation": {},
+	"dependentSelector": {
+		"source": {
+			"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_OWNER--objectPageHeader",
+			"idIsLocal": false
+		},
+		"target": {
+			"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_OWNER--objectPageHeader",
+			"idIsLocal": false
+		},
+		"movedElements": [{
+			"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_OWNER--template::UpAndDownNavigation",
+			"idIsLocal": false
+		}]
+	},
+	"validAppVersions": {
+		"creation": "1.0.0",
+		"from": "1.0.0",
+		"to": "1.0.0"
+	},
+	"jsOnly": false,
+	"variantReference": ""
+}

@@ -1,0 +1,76 @@
+{
+	"fileName": "id_1554762238572_272_moveControls",
+	"fileType": "change",
+	"changeType": "moveControls",
+	"moduleName": "",
+	"reference": "ZMEL_FLEX.Component",
+	"packageName": "$TMP",
+	"content": {
+		"movedElements": [{
+			"selector": {
+				"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_HOUSE--com.sap.vocabularies.UI.v1.LineItem::FormGroup_ZMEL_CONS_HOUSEType_fyear",
+				"idIsLocal": false
+			},
+			"sourceIndex": 2,
+			"targetIndex": 9
+		}],
+		"source": {
+			"selector": {
+				"aggregation": "formElements",
+				"type": "sap.ui.comp.smartform.Group",
+				"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_HOUSE--com.sap.vocabularies.UI.v1.LineItem::FormGroup",
+				"idIsLocal": false
+			}
+		},
+		"target": {
+			"selector": {
+				"aggregation": "formElements",
+				"type": "sap.ui.comp.smartform.Group",
+				"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_HOUSE--com.sap.vocabularies.UI.v1.LineItem::FormGroup",
+				"idIsLocal": false
+			}
+		}
+	},
+	"selector": {
+		"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_HOUSE--GeneralInformation::Form",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/ZMEL_FLEX/changes/",
+	"projectId": "ZMEL_FLEX",
+	"creation": "2019-04-08T22:24:15.405Z",
+	"originalLanguage": "RU",
+	"conditions": {},
+	"context": "",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.60.10",
+		"sourceChangeFileName": "",
+		"compositeCommand": "id_1554762238565_271_composite"
+	},
+	"oDataInformation": {},
+	"dependentSelector": {
+		"source": {
+			"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_HOUSE--com.sap.vocabularies.UI.v1.LineItem::FormGroup",
+			"idIsLocal": false
+		},
+		"target": {
+			"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_HOUSE--com.sap.vocabularies.UI.v1.LineItem::FormGroup",
+			"idIsLocal": false
+		},
+		"movedElements": [{
+			"id": "ZMEL_FLEX::sap.suite.ui.generic.template.ObjectPage.view.Details::ZMEL_CONS_HOUSE--com.sap.vocabularies.UI.v1.LineItem::FormGroup_ZMEL_CONS_HOUSEType_fyear",
+			"idIsLocal": false
+		}]
+	},
+	"validAppVersions": {
+		"creation": "1.0.0",
+		"from": "1.0.0",
+		"to": "1.0.0"
+	},
+	"jsOnly": false,
+	"variantReference": ""
+}

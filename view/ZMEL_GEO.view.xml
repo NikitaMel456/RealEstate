@@ -1,0 +1,25 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.m.sample.Select.Page"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page
+		showHeader="false"
+		class="sapUiContentPadding">
+		<content>
+			<VBox>
+				<Select
+					forceSelection="false"
+					selectedKey="{/ZMEL_CONS_FLATType/rent_type}"
+					items="{
+						path: '/ZMEL_CONS_FLATType',
+						sorter: { path: 'Name' }
+					}">
+					<core:Item key="{rent_type}" text="{Name}" />
+				</Select>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>
